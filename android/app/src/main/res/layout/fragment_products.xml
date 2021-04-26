@@ -4,14 +4,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ProductsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="PRODUCTS"
-        android:gravity="center"
-        android:textColor="@color/text"
-        android:textSize="@dimen/l"/>
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tmp_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Popular Categories"
+                android:textColor="@color/text"
+                android:textSize="@dimen/xm"
+                android:fontFamily="@font/merriweather_regular"
+                android:layout_marginTop="@dimen/l"
+                android:layout_marginStart="@dimen/m"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categories"
+                android:scrollbars="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tmp_category"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/m"
+                android:layout_marginTop="@dimen/xs"
+                />
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </FrameLayout>

@@ -26,10 +26,14 @@ public class CustomerHome extends AppCompatActivity {
     private DrawerLayout drawer;
     private View header;
     TextView name;
+
+    private String _id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_home);
+        _id = getIntent().getStringExtra("_id");
+
         cnb = findViewById(R.id.cnb);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ProductsFragment()).commit();
         cnb.setItemSelected(R.id.bottom_nav_home,true);
@@ -92,6 +96,9 @@ public class CustomerHome extends AppCompatActivity {
                 switch (i){
                     case R.id.bottom_nav_home:
                         fragment = new ProductsFragment();
+                        break;
+                    case R.id.bottom_nav_list:
+                        fragment = new ListsFragment();
                         break;
                     case R.id.bottom_nav_map:
                         fragment = new MapFragment();

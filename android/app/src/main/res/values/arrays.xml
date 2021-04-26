@@ -4,4 +4,16 @@
         <item>Customer</item>
         <item>Seller</item>
     </string-array>
+    <string-array name="categories">
+        <item>Vegetables</item>
+        <item>Fruits</item>
+        <item>Groceries</item>
+        <item>Non Veg</item>
+    </string-array>
+    <string-array name="cat_img">
+        <item>https://unsplash.com/photos/-gOUx23DNks</item>
+        <item>https://unsplash.com/photos/GqMvN4gDPes</item>
+        <item>https://unsplash.com/photos/PfAFNYL-qXY</item>
+        <item>https://unsplash.com/photos/p1RQPfzCM5U</item>
+    </string-array>
 </resources>

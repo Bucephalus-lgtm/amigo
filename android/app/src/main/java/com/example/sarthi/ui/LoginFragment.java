@@ -70,6 +70,8 @@ public class LoginFragment extends Fragment {
                 PASSWORD=etPass.getText().toString();
                 if(validate(v)){
                     loginUser();
+                }else{
+                    progress.setVisibility(View.GONE);
                 }
             }
         });
