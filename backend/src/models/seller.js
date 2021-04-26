@@ -1,15 +1,5 @@
 const mongoose = require('mongoose');
-
-const orderSchema = new mongoose.Schema({
-    customer: {
-        type: mongoose.Types.ObjectId,
-        ref: 'customer'
-    },
-    products: {
-        type: mongoose.Types.ObjectId,
-        ref: 'product'
-    }
-});
+const bcrypt = require('bcrypt');
 
 const sellerSchema = new mongoose.Schema(
     {
@@ -31,14 +21,30 @@ const sellerSchema = new mongoose.Schema(
         coordintes: {
             type: String
         },
-        orders: [
-            orderSchema
-        ],
         type: String,
     },
     { timestamps: true }
 );
 
-const seller = mongoose.model('seller', sellerSchema);
-const order = mongoose.model('order', orderSchema);
-module.exports = { seller, order };
+sellerSchema.pre('save', async function (next) {
+    const salt = await bcrypt.genSalt();
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+});
+
+sellerSchema.statics.signin = async function (type, email, password) {
+    const seller = await this.findOne({ email });
+    if (seller) {
+        const passwordCheck = await bcrypt.compare(password, seller.password);
+        console.log(password, seller.password);
+        if (passwordCheck) {
+            return seller;
+        } else {
+            console.log('Passwords did not match!');
+        }
+    } else {
+        console.log('This email is yet to sign up!');
+    }
+}
+
+module.exports = mongoose.model('seller', sellerSchema);
