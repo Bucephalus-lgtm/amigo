@@ -16,4 +16,8 @@
         <item>https://images.unsplash.com/photo-1584680226833-0d680d0a0794?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80</item>
         <item>https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1047&amp;q=80</item>
     </string-array>
+    <string-array name="initial_values_fee">
+        <item>3000</item>
+        <item>7000</item>
+    </string-array>
 </resources>

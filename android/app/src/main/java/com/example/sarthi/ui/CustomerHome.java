@@ -69,7 +69,7 @@ public class CustomerHome extends AppCompatActivity {
 
 
         header = navigationView.getHeaderView(0);
-        name = header.findViewById(R.id.name);
+        name = header.findViewById(R.id.product_name);
         name.setText("Pratik Gupta");
     }
 
