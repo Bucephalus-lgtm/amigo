@@ -1,14 +1,23 @@
 package com.example.sarthi.model;
 
 public class DealsModel {
-    String name,img_url,category;
+    String name,img_url,category,sellerId;
     int price;
 
-    public DealsModel(String name, String img_url, String category, int price) {
+    public DealsModel(String name, String img_url, String category, int price, String sellerId) {
         this.name = name;
         this.img_url = img_url;
         this.category = category;
         this.price = price;
+        this.sellerId = sellerId;
+    }
+
+    public String getSellerId() {
+        return sellerId;
+    }
+
+    public void setSellerId(String sellerId) {
+        this.sellerId = sellerId;
     }
 
     public String getName() {

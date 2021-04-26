@@ -79,7 +79,7 @@ public class ProductsFragment extends Fragment {
                 JSONObject obj = response;
                 try {
                     JSONArray jsonArray = obj.getJSONArray("product");
-                    String name, type,url;
+                    String name, type,url,sellerId;
                     int price;
                     for(int i=0;i<3;i++){
                         JSONObject object = jsonArray.getJSONObject(i);
@@ -87,7 +87,8 @@ public class ProductsFragment extends Fragment {
                         type = object.getString("category");
                         url = object.getString("image");
                         price = object.getInt("price");
-                        deals.add(new DealsModel(name,url,type,price));
+                        sellerId = object.getString("seller");
+                        deals.add(new DealsModel(name,url,type,price,sellerId));
                     }
                     popDeals.setAdapter(new DealsAdapter(deals,mContext));
                 } catch (JSONException e) {
