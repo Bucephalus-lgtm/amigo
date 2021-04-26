@@ -131,6 +131,24 @@
                     android:fontFamily="@font/raleway_medium"/>
 
             </LinearLayout>
+            <Spinner
+                android:id="@+id/user_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/userType"
+                android:layout_gravity="bottom"
+                android:translationY="-16dp"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/locationMarker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/xs"
+            android:layout_marginHorizontal="@dimen/m"
+            android:visibility="gone"
+            android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -161,44 +179,30 @@
                     android:textColor="@color/text"
                     android:layout_marginTop="@dimen/xxs"
                     android:fontFamily="@font/raleway_medium"/>
-
             </LinearLayout>
-
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_marginHorizontal="@dimen/m"
-            android:layout_marginTop="@dimen/s"
-            android:orientation="horizontal">
-            <Spinner
-                android:id="@+id/user_type"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/markLoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:entries="@array/userType"
-                android:spinnerMode="dropdown" />
-            <View
-                android:layout_width="0dp"
-                android:layout_height="2dp"
-                android:layout_weight="1"/>
-
-            <CheckBox
-                android:id="@+id/log_check"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="end"
-                android:checked="false"
-                android:textColor="@color/main"
-                android:fontFamily="@font/merriweather_mediumitalic"
-                app:buttonTint="@color/main"
-                android:textSize="@dimen/s"
-                android:text="Keep me logged in"/>
+                app:backgroundTint="@color/text"
+                android:text="Location"
+                android:textSize="@dimen/xs"
+                android:drawableEnd="@drawable/ic_pointer"
+                android:layout_gravity="bottom"/>
         </LinearLayout>
+
+
+        <CheckBox
+            android:id="@+id/log_check"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:checked="false"
+            android:textColor="@color/main"
+            android:fontFamily="@font/merriweather_mediumitalic"
+            app:buttonTint="@color/main"
+            android:textSize="@dimen/s"
+            android:text="Keep me logged in"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/register_btn"
@@ -208,9 +212,4 @@
             android:layout_marginTop="@dimen/s"
             android:text="Register"/>
     </LinearLayout>
-
-
-
-
-
 </androidx.core.widget.NestedScrollView>
