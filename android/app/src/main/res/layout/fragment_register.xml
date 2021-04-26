@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/m"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tmp_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:fontFamily="@font/merriweather_semibold"
+            android:textSize="@dimen/m"
+            android:layout_marginStart="@dimen/m"
+            android:textColor="@color/text"/>
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter email"
+            android:textSize="@dimen/s"
+            android:inputType="textEmailAddress"
+            android:layout_marginHorizontal="@dimen/xxm"
+            android:paddingHorizontal="@dimen/m"
+            android:paddingVertical="@dimen/s"
+            android:background="@drawable/et_bg"
+            android:elevation="2dp"
+            android:shadowColor="@color/main"
+            android:textColor="@color/text"
+            android:layout_marginTop="@dimen/xxs"
+            android:fontFamily="@font/raleway_medium"/>
+
+        <TextView
+            android:id="@+id/tmp_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_marginTop="@dimen/xs"
+            android:fontFamily="@font/merriweather_semibold"
+            android:textSize="@dimen/m"
+            android:layout_marginStart="@dimen/m"
+            android:textColor="@color/text"/>
+
+        <EditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter password"
+            android:drawableEnd="@drawable/ic_eye"
+            android:background="@drawable/et_bg"
+            android:elevation="2dp"
+            android:textSize="@dimen/s"
+            android:shadowColor="@color/main"
+            android:inputType="textPassword"
+            android:layout_marginHorizontal="@dimen/xxm"
+            android:paddingHorizontal="@dimen/m"
+            android:paddingVertical="@dimen/s"
+            android:textColor="@color/text"
+            android:layout_marginTop="@dimen/xxs"
+            android:fontFamily="@font/raleway_medium"/>
+
+        <TextView
+            android:id="@+id/tmp_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_marginTop="@dimen/xs"
+            android:fontFamily="@font/merriweather_semibold"
+            android:textSize="@dimen/m"
+            android:layout_marginStart="@dimen/m"
+            android:textColor="@color/text"/>
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter name"
+            android:textSize="@dimen/s"
+            android:inputType="textPersonName"
+            android:layout_marginHorizontal="@dimen/xxm"
+            android:paddingHorizontal="@dimen/m"
+            android:paddingVertical="@dimen/s"
+            android:background="@drawable/et_bg"
+            android:elevation="2dp"
+            android:shadowColor="@color/main"
+            android:textColor="@color/text"
+            android:layout_marginTop="@dimen/xxs"
+            android:fontFamily="@font/raleway_medium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/xs"
+            android:layout_marginHorizontal="@dimen/m"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tmp_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone No."
+                    android:fontFamily="@font/merriweather_semibold"
+                    android:textSize="@dimen/m"
+                    android:textColor="@color/text"/>
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter phone no"
+                    android:textSize="@dimen/s"
+                    android:inputType="phone"
+                    android:layout_marginHorizontal="@dimen/s"
+                    android:paddingHorizontal="@dimen/m"
+                    android:paddingVertical="@dimen/s"
+                    android:background="@drawable/et_bg"
+                    android:elevation="2dp"
+                    android:shadowColor="@color/main"
+                    android:textColor="@color/text"
+                    android:layout_marginTop="@dimen/xxs"
+                    android:fontFamily="@font/raleway_medium"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tmp_pincode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pincode"
+                    android:fontFamily="@font/merriweather_semibold"
+                    android:textSize="@dimen/m"
+                    android:textColor="@color/text"/>
+
+                <EditText
+                    android:id="@+id/et_pincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter pincode"
+                    android:textSize="@dimen/s"
+                    android:inputType="number"
+                    android:layout_marginHorizontal="@dimen/s"
+                    android:paddingHorizontal="@dimen/m"
+                    android:paddingVertical="@dimen/s"
+                    android:background="@drawable/et_bg"
+                    android:elevation="2dp"
+                    android:shadowColor="@color/main"
+                    android:textColor="@color/text"
+                    android:layout_marginTop="@dimen/xxs"
+                    android:fontFamily="@font/raleway_medium"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/m"
+            android:layout_marginTop="@dimen/s"
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/user_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/userType"
+                android:spinnerMode="dropdown" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_weight="1"/>
+
+            <CheckBox
+                android:id="@+id/log_check"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:checked="false"
+                android:textColor="@color/main"
+                android:fontFamily="@font/merriweather_mediumitalic"
+                app:buttonTint="@color/main"
+                android:textSize="@dimen/s"
+                android:text="Keep me logged in"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/register_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/m"
+            android:layout_marginTop="@dimen/s"
+            android:text="Register"/>
+    </LinearLayout>
+
+
+
+
+
+</androidx.core.widget.NestedScrollView>
