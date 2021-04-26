@@ -18,7 +18,7 @@ const sellerSchema = new mongoose.Schema(
         pin: {
             type: Number
         },
-        coordintes: {
+        coordinates: {
             type: String
         },
         type: String,
