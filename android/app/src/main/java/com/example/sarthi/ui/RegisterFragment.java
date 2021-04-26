@@ -49,7 +49,6 @@ public class RegisterFragment extends Fragment {
                     locationMark.setVisibility(View.VISIBLE);
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
