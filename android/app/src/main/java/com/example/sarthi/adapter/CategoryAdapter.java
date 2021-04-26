@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,6 +40,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
         Glide.with(mContext).load(itemList.get(position).getImg_url())
                 .into(holder.cat_img);
+        holder.cat_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, itemList.get(position).getImg_url(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
