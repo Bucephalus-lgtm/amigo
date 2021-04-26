@@ -20,44 +20,31 @@ exports.signup = async (req, res) => {
     }
 };
 
-exports.signin = (req, res) => {
+exports.login = async (req, res) => {
     const { email, password, type } = req.body;
+    console.log(req.body);
     if (type === 'customer') {
-        Customer.findOne({ email }, (err, customer) => {
-            if (err || !customer) {
-                return res.status(400).json({
-                    error: 'Customer with that email does not exist. Please signup!'
-                });
-            }
-
+        const customer = await Customer.signin(type, email, password);
+        if (customer) {
             const token = jwt.sign({ _id: customer._id }, process.env.JWT_SECRET);
-            console.log(token);
-
             res.cookie('sarthi', token, { expire: new Date() + 9999 });
-
-            const { _id, name, email, type } = customer;
-            return res.json({ token, customer: { _id, email, name, type } });
-        });
+            return res.json({ token, customer });
+        } else {
+            return res.json({ error: 'Something went wrong!' });
+        }
     } else {
-        Seller.findOne({ email }, (err, seller) => {
-            if (err || !seller) {
-                return res.status(400).json({
-                    error: 'Seller with that email does not exist. Please signup!'
-                });
-            }
-
+        const seller = await Seller.signin(type, email, password);
+        if (seller) {
             const token = jwt.sign({ _id: seller._id }, process.env.JWT_SECRET);
-            console.log(token);
-
             res.cookie('sarthi', token, { expire: new Date() + 9999 });
-
-            const { _id, name, email, type } = seller;
-            return res.json({ token, seller: { _id, email, name, type } });
-        });
+            return res.json({ token, seller });
+        } else {
+            return res.json({ error: 'Something went wrong!' });
+        }
     }
 }
 
-exports.signout = function (req, res) {
+exports.logout = function (req, res) {
     res.clearCookie('sarthi');
     return res.json({ msg: 'You have been signed out successfuly!' });
 }
