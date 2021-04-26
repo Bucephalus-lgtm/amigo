@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Sarthi</string>
+
+    <string name="step_t1">Easy Ordering</string>
+    <string name="step_d1">Order beforehand to avoid any hassle.</string>
+    <string name="step_t2">Home Delivery</string>
+    <string name="step_d2">Sell and Buy necessary items while maintaining precautionary guidelines.</string>
+    <string name="step_t3">Social Distancing</string>
+    <string name="step_d3">Avoid crowding and get all products in the safety of your home.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="close">Close</string>
+    <string name="open">Open</string>
+</resources>
