@@ -83,7 +83,6 @@ public class LoginFragment extends Fragment {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, apikey, new JSONObject(params), new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-
                 try {
 //                        String token = response.getString("token");
                         JSONObject obj;
@@ -96,13 +95,14 @@ public class LoginFragment extends Fragment {
 //                        sharedPreferenceClass.setValue_string("token", token);
                         Toast.makeText(getActivity().getApplicationContext(),_id, Toast.LENGTH_SHORT).show();
 
-                        if(TYPE=="customer"){
-                            startActivity(new Intent(getActivity().getApplicationContext(), CustomerHome.class));
-                        }else{
-                            Intent intent = new Intent(getActivity().getApplicationContext(),SellerHome.class);
-                            intent.putExtra("_id",_id);
-                            startActivity(intent);
-                        }
+                    Intent intent;
+                    if(TYPE=="customer"){
+                        intent = new Intent(getActivity().getApplicationContext(), CustomerHome.class);
+                    }else{
+                        intent = new Intent(getActivity().getApplicationContext(), SellerHome.class);
+                    }
+                    intent.putExtra("_id",_id);
+                    startActivity(intent);
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
