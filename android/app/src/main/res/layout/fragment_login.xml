@@ -99,4 +99,15 @@
         android:layout_marginHorizontal="@dimen/m"
         android:layout_marginTop="@dimen/l"
         android:text="Login"/>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/s"
+        android:indeterminate="true"
+        app:indicatorColor="@color/text"
+        app:trackColor="@color/white"/>
 </LinearLayout>

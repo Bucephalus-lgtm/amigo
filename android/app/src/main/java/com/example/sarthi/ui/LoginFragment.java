@@ -30,6 +30,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.sarthi.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,6 +45,7 @@ public class LoginFragment extends Fragment {
     private Spinner userType;
     private CheckBox logCheck;
     private MaterialButton loginBtn;
+    private CircularProgressIndicator progress;
 
     private String EMAIL, PASSWORD, TYPE;
 
@@ -54,9 +56,11 @@ public class LoginFragment extends Fragment {
         root = (ViewGroup) inflater.inflate(R.layout.fragment_login  , container,false);
         initViews();
 
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progress.setVisibility(View.VISIBLE);
                 if(userType.getSelectedItem().toString().equals("Seller")){
                     TYPE="seller";
                 }else{
@@ -93,8 +97,8 @@ public class LoginFragment extends Fragment {
                         }
                         String _id = obj.getString("_id");
 //                        sharedPreferenceClass.setValue_string("token", token);
-                        Toast.makeText(getActivity().getApplicationContext(),_id, Toast.LENGTH_SHORT).show();
-
+//                        Toast.makeText(getActivity().getApplicationContext(),_id, Toast.LENGTH_SHORT).show();
+                    progress.setVisibility(View.GONE);
                     Intent intent;
                     if(TYPE=="customer"){
                         intent = new Intent(getActivity().getApplicationContext(), CustomerHome.class);
@@ -104,6 +108,7 @@ public class LoginFragment extends Fragment {
                     intent.putExtra("_id",_id);
                     startActivity(intent);
                 } catch (JSONException e) {
+                    progress.setVisibility(View.GONE);
                     e.printStackTrace();
                     Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
@@ -163,6 +168,8 @@ public class LoginFragment extends Fragment {
         userType = root.findViewById(R.id.user_type);
         logCheck = root.findViewById(R.id.log_check);
         loginBtn = root.findViewById(R.id.login_btn);
+
+        progress = root.findViewById(R.id.progress);
 
     }
 
