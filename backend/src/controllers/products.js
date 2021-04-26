@@ -5,6 +5,7 @@ const Product = require('../models/product');
 
 exports.create_product = async (req, res) => {
     const { name, category, price, seller } = req.body;
+    console.log(req.body);
 
     const uploader = async (path) => await cloudinary.uploads(path, 'bhargab_files');
 

@@ -21,26 +21,31 @@ exports.signup = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-    const { email, password, type } = req.body;
-    console.log(req.body);
-    if (type === 'customer') {
-        const customer = await Customer.signin(type, email, password);
-        if (customer) {
-            const token = jwt.sign({ _id: customer._id }, process.env.JWT_SECRET);
-            res.cookie('sarthi', token, { expire: new Date() + 9999 });
-            return res.json({ token, customer });
+    try {
+        const { email, password, type } = req.body;
+        console.log(req.body);
+        if (type === 'customer') {
+            const customer = await Customer.signin(type, email, password);
+            if (customer) {
+                const token = jwt.sign({ _id: customer._id }, process.env.JWT_SECRET);
+                res.cookie('sarthi', token, { expire: new Date() + 9999 });
+                return res.json({ token, customer });
+            } else {
+                return res.status(400).json({ error: 'Something went wrong!' });
+            }
         } else {
-            return res.json({ error: 'Something went wrong!' });
+            const seller = await Seller.signin(type, email, password);
+            if (seller) {
+                const token = jwt.sign({ _id: seller._id }, process.env.JWT_SECRET);
+                res.cookie('sarthi', token, { expire: new Date() + 9999 });
+                return res.json({ token, seller });
+            } else {
+                return res.status(400).json({ error: 'Something went wrong!' });
+            }
         }
-    } else {
-        const seller = await Seller.signin(type, email, password);
-        if (seller) {
-            const token = jwt.sign({ _id: seller._id }, process.env.JWT_SECRET);
-            res.cookie('sarthi', token, { expire: new Date() + 9999 });
-            return res.json({ token, seller });
-        } else {
-            return res.json({ error: 'Something went wrong!' });
-        }
+    } catch (err) {
+        console.log(err);
+        return res.json({ err });
     }
 }
 
