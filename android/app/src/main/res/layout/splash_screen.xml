@@ -7,10 +7,11 @@
     tools:context=".ui.SplashScreen">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
         android:text="SARTHI"
-        android:textSize="@dimen/l"
+        android:textSize="@dimen/xl"
         android:fontFamily="@font/raleway_bold_italic"
         android:textColor="#251C1C"
         android:letterSpacing="-0.03"
