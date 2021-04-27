@@ -1,16 +1,5 @@
 # Amigo
 
-## Table of contents
-
-- [Introduction](#introduction)
-- [Demo](#demo)
-- [Features](#features)
-- [Technology](#technology)
-- [Database Models](#database)
-- [Color Palette](#colors)
-- [Run](#run)
-- [License](#license)
-
 ## Introduction
 
 A project to enhance the bridge between common people and sellers by maintaining covid 19 protocols
