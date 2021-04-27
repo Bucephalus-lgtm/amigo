@@ -1,12 +1,14 @@
 package com.example.sarthi.adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,6 +45,13 @@ public class SellerItemsAdapter extends RecyclerView.Adapter<SellerItemsAdapter.
         holder.price.setText(itemlist.get(position).getPrice());
         holder.type.setText(itemlist.get(position).getType());
         Glide.with(mContext).load(itemlist.get(position).getImg_url()).into(holder.image);
+
+        holder.add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, itemlist.get(position).getName()+" added to cart.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
