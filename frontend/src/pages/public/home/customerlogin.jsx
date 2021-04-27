@@ -33,13 +33,13 @@ export default function UserLogIn() {
     console.log(password);
     const customer = 'customer';
 
-    axios.post('https://sarthiapi.herokuapp.com/api/signin', { type: customer, email, password })
+    axios.post('http://localhost:5000/api/signin', { type: customer, email:email, password:password})
       .then(res => {
         console.log(res);
         if (res.status === 200) {
           authenticate(res.data, () => {
             console.log(res.data);
-            history.push('/customer');
+            history.push('/Sarthi');
           });
         }else {
           history.push('/customerlogin');

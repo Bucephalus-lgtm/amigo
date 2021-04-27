@@ -68,7 +68,7 @@ export default function HomePage() {
                     <Grid item xs={6} md={6} >
                         <div className={classes.paper}>
                             <Typography component="h1" variant="h5" style={{color:'white'}}>
-                                Already Registered?
+                                Are you an Admin?
                             </Typography>
                             <Link href="/customerlogin">
                                 <Button
@@ -76,39 +76,7 @@ export default function HomePage() {
                                     color="Primary"
                                     className={classes.submit}
                                 >
-                                    LogIn As Customer
-                            </Button>
-                            </Link>
-                            <Link href="/sellerlogin">
-                                <Button
-                                    variant="contained"
-                                    color="Primary"
-                                    className={classes.submit}
-                                >
-                                    LogIn As Seller
-                            </Button>
-                            </Link>
-                            <Typography component="h1" variant="h5" style={{color:'white',marginTop:'20px'}}>
-                                SignUp
-                            </Typography>
-                            <Link href="/customersignup">
-                                <Button
-                                    variant="contained"
-                                    color="Primary"
-                                    className={classes.submit}
-                                >
-                                    Customer
-                            </Button>
-                            </Link>
-                            <Link href="/sellersignup">
-                                <Button
-                                    type="submit"
-                                    fullWidth
-                                    variant="contained"
-                                    color="Primary"
-                                    className={classes.submit}
-                                >
-                                    Seller
+                                    LogIn As Admin
                             </Button>
                             </Link>
                         </div>
