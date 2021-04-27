@@ -34,7 +34,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/_id"
+                    android:id="@+id/sellerProduct_id"
                     android:visibility="gone"/>
                 <TextView
                     android:fontFamily="@font/merriweather_semibold"
@@ -48,33 +48,13 @@
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                     android:textColor="@color/text"/>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/itemName"
-                    android:gravity="center_vertical"
-                    android:id="@+id/address"
-                    android:layout_marginTop="2dp"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_map"
-                        app:tint="@color/text" />
-                    <TextView
-                        android:id="@+id/sellerPin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Placeholder Pin"
-                        android:textSize="10sp"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"/>
-                </LinearLayout>
+
                 <TextView
                     android:id="@+id/itemType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Category"
-                    android:layout_below="@id/address"
+                    android:layout_below="@id/itemName"
                     android:textSize="@dimen/s"
                     android:layout_marginStart="@dimen/s"
                     android:layout_marginBottom="@dimen/s"
@@ -83,12 +63,26 @@
                     android:textColor="@color/text"/>
             </RelativeLayout>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_to_cart"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:text="Add"
+                android:textSize="@dimen/xs"
+                android:backgroundTint="@color/text"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/pg_img"
+                android:layout_marginEnd="@dimen/s"/>
+
 
         </RelativeLayout>
 
 
+
+
     </com.google.android.material.card.MaterialCardView>
     <RelativeLayout
+        android:elevation="@dimen/xl"
         android:background="@drawable/price_chip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,5 +98,8 @@
             android:textSize="@dimen/m"
             android:textColor="@color/white"/>
     </RelativeLayout>
+
+
+
 
 </RelativeLayout>

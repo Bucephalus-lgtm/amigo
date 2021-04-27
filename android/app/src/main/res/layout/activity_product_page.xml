@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="Placeholder no."
         android:layout_below="@id/sellerName"
-        android:layout_marginStart="@dimen/m"
+        android:layout_marginStart="@dimen/xm"
         android:textSize="@dimen/m"
         android:fontFamily="@font/merriweathe_light"/>
 
@@ -72,7 +72,7 @@
         android:id="@+id/sellerProducts"
         android:layout_below="@id/tmp_product"
         android:layout_width="wrap_content"
-        android:layout_marginStart="@dimen/m"
+        android:layout_marginHorizontal="@dimen/xxs"
         android:layout_height="wrap_content"/>
 
 
