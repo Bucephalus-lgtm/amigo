@@ -1,6 +1,7 @@
 package com.example.sarthi.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.sarthi.R;
 import com.example.sarthi.model.DealsModel;
+import com.example.sarthi.ui.ProductPage;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;
@@ -46,7 +48,10 @@ public class DealsAdapter extends RecyclerView.Adapter<DealsAdapter.ViewHolder> 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(mContext, ProductPage.class);
+                intent.putExtra("_id",itemList.get(position).getSellerId());
                 Toast.makeText(mContext, itemList.get(position).getSellerId(), Toast.LENGTH_SHORT).show();
+                mContext.startActivity(intent);
             }
         });
     }

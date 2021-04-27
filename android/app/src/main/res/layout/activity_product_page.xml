@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProductPage">
+
+    <TextView
+        android:id="@+id/sellerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Placeholder Name"
+        android:textSize="@dimen/xm"
+        android:fontFamily="@font/merriweather_medium"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/m"
+        android:layout_marginTop="@dimen/xm"
+        android:textColor="@color/text"/>
+    <TextView
+        android:id="@+id/sellerNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Placeholder no."
+        android:layout_below="@id/sellerName"
+        android:layout_marginStart="@dimen/m"
+        android:textSize="@dimen/m"
+        android:fontFamily="@font/merriweathe_light"/>
+
+    <LinearLayout
+        android:id="@+id/tmp_loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/sellerNo"
+        android:layout_marginStart="@dimen/m"
+        android:layout_marginTop="@dimen/s">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_map"
+            app:tint="@color/text" />
+        <TextView
+            android:id="@+id/sellerpin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Placeholder Location"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/hor_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/disabled"
+        android:layout_below="@id/tmp_loc"
+        android:layout_marginHorizontal="@dimen/m"
+        android:layout_marginTop="@dimen/s"/>
+
+    <TextView
+        android:id="@+id/tmp_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:fontFamily="@font/merriweather_medium"
+        android:textSize="@dimen/m"
+        android:text="Products"
+        android:layout_below="@id/hor_bar"
+        android:layout_marginStart="@dimen/m"
+        android:layout_marginTop="@dimen/m"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sellerProducts"
+        android:layout_below="@id/tmp_product"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/m"
+        android:layout_height="wrap_content"/>
+
+
+
+</RelativeLayout>
