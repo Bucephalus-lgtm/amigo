@@ -109,6 +109,7 @@ public class LoginFragment extends Fragment {
                     }
                     intent.putExtra("_id",_id);
                     startActivity(intent);
+
                 } catch (JSONException e) {
                     progress.setVisibility(View.GONE);
                     e.printStackTrace();
