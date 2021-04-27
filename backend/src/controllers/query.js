@@ -11,3 +11,8 @@ exports.send_queries = async (req, res) => {
         return res.json({ err: err.message });
     }
 }
+
+exports.receive_queries = async (req, res) => {
+    const queries = await Query.find();;
+    return res.json({ queries });
+}
