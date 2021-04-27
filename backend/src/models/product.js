@@ -18,6 +18,6 @@ const productSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: 'seller'
     }
-}, { timestamps: true });
+});
 
 module.exports = mongoose.model('product', productSchema);

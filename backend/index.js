@@ -18,6 +18,7 @@ const product = require('./src/routes/public/products');
 const order = require('./src/routes/public/orders');
 const seller = require('./src/routes/public/seller');
 const customer = require('./src/routes/public/customer');
+const query = require('./src/routes/public/query');
 
 app.get('/api', (req, res) => res.send('API working fine!'));
 
@@ -26,6 +27,7 @@ app.use('/api', product);
 app.use('/api', order);
 app.use('/api', seller);
 app.use('/api', customer);
+app.use('/api', query);
 
 const PORT = process.env.PORT || 5000;
 

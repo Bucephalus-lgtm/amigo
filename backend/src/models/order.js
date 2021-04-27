@@ -17,7 +17,7 @@ const CartItem = mongoose.model("cartItem", CartItemSchema);
 const OrderSchema = new mongoose.Schema(
   {
     products: [CartItemSchema],
-    user: { type: ObjectId, ref: 'customer' }
+    customer: { type: ObjectId, ref: 'customer' }
   }
 );
 
