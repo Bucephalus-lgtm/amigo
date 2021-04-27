@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -65,6 +66,12 @@ public class ListsFragment extends Fragment {
         nonVeg = root.findViewById(R.id.non_veg);
         priceRange = root.findViewById(R.id.feeRange);
         productList = root.findViewById(R.id.productList);
+        GridLayoutManager manager = new GridLayoutManager(getActivity().getApplicationContext(), 2, GridLayoutManager.VERTICAL, false);
+        productList.setLayoutManager(manager);
+        productList.setHasFixedSize(true);
+
+
+
         initList();
 
         changeListener();
@@ -112,7 +119,7 @@ public class ListsFragment extends Fragment {
                     JSONArray jsonArray = obj.getJSONArray("product");
                     String name, type,url,sellerId;
                     int price;
-                    for(int i=0;i<3;i++){
+                    for(int i=0;i<jsonArray.length();i++){
                         JSONObject object = jsonArray.getJSONObject(i);
                         name = object.getString("name");
                         type = object.getString("category");

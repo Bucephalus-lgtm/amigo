@@ -5,9 +5,42 @@
     android:layout_height="match_parent"
     tools:context=".ui.MyProductsFragment">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tmp_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Products"
+            android:textSize="@dimen/xm"
+            android:layout_marginStart="@dimen/m"
+            android:layout_marginTop="@dimen/m"
+            android:textColor="@color/text"
+            android:fontFamily="@font/merriweather_mediumitalic"/>
+        <View
+            android:id="@+id/bar"
+            android:layout_width="80dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/xxs"
+            android:layout_marginStart="100dp"
+            android:background="@color/text"
+            android:layout_below="@id/tmp_head"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/myProducts"
+            android:layout_below="@id/bar"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/m"
+            android:layout_marginHorizontal="@dimen/xxs"
+            android:layout_marginBottom="@dimen/xxm"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+    </RelativeLayout>
+
 
 </FrameLayout>

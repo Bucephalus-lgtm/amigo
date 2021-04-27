@@ -10,7 +10,7 @@
         android:visibility="gone"/>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/productcard"
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/xxs"
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/product_img"
+                android:id="@+id/my_product_img"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:src="@drawable/ic_launcher_background"
@@ -30,16 +30,16 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/product_img">
+                android:layout_below="@id/my_product_img">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/Seller_id"
+                    android:id="@+id/myProduct_id"
                     android:visibility="gone"/>
                 <TextView
                     android:fontFamily="@font/merriweather_semibold"
                     android:layout_marginStart="@dimen/xxs"
-                    android:id="@+id/ProductName"
+                    android:id="@+id/myProductName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Placeholder Name"
@@ -50,11 +50,11 @@
 
 
                 <TextView
-                    android:id="@+id/ProductType"
+                    android:id="@+id/myProductType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Category"
-                    android:layout_below="@id/ProductName"
+                    android:layout_below="@id/myProductName"
                     android:textSize="@dimen/s"
                     android:layout_marginStart="@dimen/s"
                     android:layout_marginBottom="@dimen/s"
@@ -74,7 +74,7 @@
         android:layout_alignParentTop="true"
         android:padding="@dimen/xxs">
         <TextView
-            android:id="@+id/Productprice"
+            android:id="@+id/myProductprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Price"

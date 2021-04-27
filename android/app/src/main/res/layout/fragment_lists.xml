@@ -94,11 +94,11 @@
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/productList"
             android:layout_below="@id/filter_card"
-            android:layout_marginHorizontal="@dimen/s"/>
+            android:layout_marginHorizontal="@dimen/xs"/>
     </RelativeLayout>
 
 </FrameLayout>
