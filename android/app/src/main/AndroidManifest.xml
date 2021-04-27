@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sarthi">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,12 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sarthi">
+        <activity android:name=".ui.ProductPage"></activity>
 
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="@string/map_key"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
 
-
-        <activity android:name=".ui.SellerHome"></activity>
+        <activity android:name=".ui.SellerHome" />
         <activity android:name=".ui.CustomerHome" />
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.IntroScreen" />

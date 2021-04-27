@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemId"
+        android:visibility="gone"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/xxs"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="@dimen/xs"
+        android:layout_marginBottom="@dimen/xs">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/pg_img"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_launcher_background"
+                android:scaleType="fitXY"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pg_img">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/_id"
+                    android:visibility="gone"/>
+                <TextView
+                    android:fontFamily="@font/merriweather_semibold"
+                    android:layout_marginStart="@dimen/xxs"
+                    android:id="@+id/itemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Placeholder Name"
+                    android:layout_marginTop="@dimen/xs"
+                    android:textSize="@dimen/s"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/text"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/itemName"
+                    android:gravity="center_vertical"
+                    android:id="@+id/address"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_map"
+                        app:tint="@color/text" />
+                    <TextView
+                        android:id="@+id/sellerPin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Placeholder Pin"
+                        android:textSize="10sp"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/itemType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:layout_below="@id/address"
+                    android:textSize="@dimen/s"
+                    android:layout_marginStart="@dimen/s"
+                    android:layout_marginBottom="@dimen/s"
+                    android:layout_marginTop="@dimen/xs"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textColor="@color/text"/>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+    <RelativeLayout
+        android:background="@drawable/price_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:padding="@dimen/xxs">
+        <TextView
+            android:id="@+id/pg_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:fontFamily="@font/merriweather_semibold"
+            android:textSize="@dimen/m"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+</RelativeLayout>
