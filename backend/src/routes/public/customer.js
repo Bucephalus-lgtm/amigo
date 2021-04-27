@@ -1,10 +1,7 @@
 const express = require("express");
-const Seller = require("../../models/seller");
+const { sellers_by_pin } = require("../../controllers/customer");
 const router = express.Router();
 
-router.post("/signup", async (req, res) => {
-    const sellers = await Seller.find();
-    return res.json({ sellers });
-});
+router.get("/sellers/:pin", sellers_by_pin);
 
 module.exports = router;
