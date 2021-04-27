@@ -4,4 +4,20 @@
         <item>Customer</item>
         <item>Seller</item>
     </string-array>
+    <string-array name="categories">
+        <item>Vegetables</item>
+        <item>Fruits</item>
+        <item>Groceries</item>
+        <item>Non Veg</item>
+    </string-array>
+    <string-array name="cat_img">
+        <item>https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80</item>
+        <item>https://images.unsplash.com/photo-1563746098251-d35aef196e83?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1055&amp;q=80</item>
+        <item>https://images.unsplash.com/photo-1584680226833-0d680d0a0794?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80</item>
+        <item>https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1047&amp;q=80</item>
+    </string-array>
+    <string-array name="initial_values_fee">
+        <item>3000</item>
+        <item>7000</item>
+    </string-array>
 </resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dealcard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="@dimen/xs"
+    app:cardCornerRadius="@dimen/m"
+    android:layout_marginHorizontal="@dimen/xs"
+    android:layout_marginVertical="@dimen/xxs">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sellerId"
+            android:visibility="gone"/>
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="125dp"
+            android:id="@+id/deal_img"
+            android:src="@drawable/ic_launcher_background"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/deal_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Placeholder Name"
+            android:layout_toEndOf="@id/deal_img"
+            android:layout_marginTop="@dimen/m"
+            android:layout_marginStart="@dimen/s"
+            android:textSize="@dimen/xm"
+            android:textColor="@color/text"
+            android:fontFamily="@font/raleway_medium"/>
+
+        <TextView
+            android:id="@+id/deal_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/deal_img"
+            android:layout_below="@id/deal_name"
+            android:layout_marginStart="@dimen/s"
+            android:text="Fruits"
+            android:textColor="@color/text"
+            android:textSize="@dimen/xs"
+            android:fontFamily="@font/raleway_light"
+            android:textStyle="italic"/>
+
+
+        <TextView
+            android:id="@+id/deals_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/deal_img"
+            android:layout_below="@id/deal_type"
+            android:layout_marginStart="@dimen/s"
+            android:layout_marginTop="@dimen/m"
+            android:text="1000"
+            android:textSize="@dimen/xm"
+            android:textColor="#696871"
+            android:fontFamily="@font/raleway_medium"/>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

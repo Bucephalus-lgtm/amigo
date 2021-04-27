@@ -7,7 +7,7 @@
     android:background="@drawable/header_bg">
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/product_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Placeholder Name"
@@ -21,7 +21,7 @@
         android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/name"
+        android:layout_below="@id/product_name"
         android:layout_marginStart="@dimen/m"
         android:text="7231854995"
         android:textSize="@dimen/m"
