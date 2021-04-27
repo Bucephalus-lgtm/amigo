@@ -20,7 +20,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.sarthi.R;
+import com.example.sarthi.adapter.DealsAdapter;
 import com.example.sarthi.adapter.ProductsAdapter;
+import com.example.sarthi.model.DealsModel;
 import com.example.sarthi.model.ProductModel;
 import com.google.android.material.slider.RangeSlider;
 
@@ -47,8 +49,9 @@ public class ListsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_lists, container, false);
-        initViews();
         context = getActivity().getApplicationContext();
+
+        initViews();
 
 
 
@@ -62,7 +65,7 @@ public class ListsFragment extends Fragment {
         nonVeg = root.findViewById(R.id.non_veg);
         priceRange = root.findViewById(R.id.feeRange);
         productList = root.findViewById(R.id.productList);
-        initList(vegetable.isChecked(),fruit.isChecked(),groceries.isChecked(),nonVeg.isChecked());
+        initList();
 
         changeListener();
 
@@ -70,64 +73,64 @@ public class ListsFragment extends Fragment {
     }
 
     private void changeListener() {
-        vegetable.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                initList(vegetable.isChecked(),fruit.isChecked(),groceries.isChecked(),nonVeg.isChecked());
-            }
-        });
-        fruit.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                initList(vegetable.isChecked(),fruit.isChecked(),groceries.isChecked(),nonVeg.isChecked());
-            }
-        });
-        nonVeg.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                initList(vegetable.isChecked(),fruit.isChecked(),groceries.isChecked(),nonVeg.isChecked());
-            }
-        });
-        groceries.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                initList(vegetable.isChecked(),fruit.isChecked(),groceries.isChecked(),nonVeg.isChecked());
-            }
-        });
+//        vegetable.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                initList(vegetable.isChecked(),fruit.isChecked(),groceries.isChecked(),nonVeg.isChecked());
+//            }
+//        });
+//        fruit.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                initList(vegetable.isChecked(),fruit.isChecked(),groceries.isChecked(),nonVeg.isChecked());
+//            }
+//        });
+//        nonVeg.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                initList(vegetable.isChecked(),fruit.isChecked(),groceries.isChecked(),nonVeg.isChecked());
+//            }
+//        });
+//        groceries.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                initList(vegetable.isChecked(),fruit.isChecked(),groceries.isChecked(),nonVeg.isChecked());
+//            }
+//        });
 
     }
 
-    private void initList(boolean checked, boolean checked1, boolean checked2, boolean checked3) {
+    private void initList() {
         productModelList = new ArrayList<>();
-        String apikey="https://sarthiapi.herokuapp.com/api/get/all/products";
+        String apikey = "https://sarthiapi.herokuapp.com/api/get/all/products";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, apikey, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 JSONObject obj = response;
-                try{
+                try {
                     JSONArray jsonArray = obj.getJSONArray("product");
-                    String name,type,url,sellerId;
+                    String name, type,url,sellerId;
                     int price;
-                    for(int i=0;i<jsonArray.length();i++){
+                    for(int i=0;i<3;i++){
                         JSONObject object = jsonArray.getJSONObject(i);
                         name = object.getString("name");
-                        type= object.getString("category");
+                        type = object.getString("category");
                         url = object.getString("image");
-                        sellerId = object.getString("seller");
                         price = object.getInt("price");
+                        sellerId = object.getString("seller");
                         productModelList.add(new ProductModel(name,type,url,sellerId,price));
                     }
-                    productList.setAdapter(new ProductsAdapter(productModelList,context));
+                    productList.setAdapter(new ProductsAdapter(productModelList,getActivity().getApplicationContext()));
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(context,error.getMessage(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity().getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
 
