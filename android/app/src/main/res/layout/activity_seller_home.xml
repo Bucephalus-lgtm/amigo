@@ -39,7 +39,7 @@
         android:layout_marginEnd="@dimen/xxm"
         android:layout_marginBottom="@dimen/xxm"
         android:background="@color/main"
-        android:src="@drawable/ic_cart"
+        android:src="@drawable/ic_add"
         app:tint="@color/white"
         app:backgroundTint="@color/main"
         app:rippleColor="#A8E2FB" />

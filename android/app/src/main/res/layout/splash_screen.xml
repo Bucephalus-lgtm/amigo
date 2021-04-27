@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SPLASH SCREEN"
+        android:text="SARTHI"
         android:textSize="@dimen/l"
         android:fontFamily="@font/raleway_bold_italic"
         android:textColor="#251C1C"

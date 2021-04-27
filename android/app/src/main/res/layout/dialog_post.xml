@@ -33,34 +33,34 @@
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:gravity="center_vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="3dp"-->
+<!--                android:gravity="center_vertical">-->
 
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    app:srcCompat="@drawable/ic_phone"
-                    app:tint="@color/text"
-                    android:backgroundTint="@color/text"/>
+<!--                <ImageView-->
+<!--                    android:layout_width="16dp"-->
+<!--                    android:layout_height="16dp"-->
+<!--                    app:srcCompat="@drawable/ic_phone"-->
+<!--                    app:tint="@color/text"-->
+<!--                    android:backgroundTint="@color/text"/>-->
 
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="0dp" />
+<!--                <View-->
+<!--                    android:layout_width="10dp"-->
+<!--                    android:layout_height="0dp" />-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:text="7231854995"
-                    android:textSize="@dimen/s"
-                    android:fontFamily="@font/merriweathe_light"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/text" />
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="7231854995"-->
+<!--                    android:textSize="@dimen/s"-->
+<!--                    android:fontFamily="@font/merriweathe_light"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"-->
+<!--                    android:textColor="@color/text" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
         </LinearLayout>
         <Spinner
@@ -73,7 +73,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_upload"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:minWidth="0dp"
@@ -152,6 +152,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:tint="@color/text"
+            android:visibility="gone"
             app:srcCompat="@drawable/ic_camera" />
         <ImageButton
             android:id="@+id/bt_link"
