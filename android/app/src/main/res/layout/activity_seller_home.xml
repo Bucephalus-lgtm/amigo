@@ -1,19 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.SellerHome">
+    <FrameLayout
+        android:id="@+id/fragment_container_seller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/xl"
+        />
+    <RelativeLayout
+        android:id="@+id/cnb_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+        <com.ismaeldivita.chipnavigation.ChipNavigationBar
+            android:id="@+id/cnb_seller"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/white"
+            app:cnb_menuResource="@menu/bottom_nav_seller"
+            app:cnb_unselectedColor="@color/main"
+            app:cnb_orientationMode="horizontal"
+            app:cnb_radius="20dp"
+            app:cnb_iconSize="20dp"
+            android:fontFamily="@font/raleway_light"/>
+    </RelativeLayout>
 
-    <TextView
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SELLER PAGE"
-        android:textColor="@color/text"
-        android:textSize="@dimen/l"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_above="@id/cnb_container"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/xxm"
+        android:layout_marginBottom="@dimen/xxm"
+        android:background="@color/main"
+        android:src="@drawable/ic_cart"
+        app:tint="@color/white"
+        app:backgroundTint="@color/main"
+        app:rippleColor="#A8E2FB" />
+
+</RelativeLayout>

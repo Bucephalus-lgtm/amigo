@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Pratik Gupta"
+                    android:fontFamily="@font/merriweather_regular"
+                    android:textSize="@dimen/m"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    app:srcCompat="@drawable/ic_phone"
+                    app:tint="@color/text"
+                    android:backgroundTint="@color/text"/>
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="0dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="7231854995"
+                    android:textSize="@dimen/s"
+                    android:fontFamily="@font/merriweathe_light"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/text" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <Spinner
+            android:id="@+id/postType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/categories"
+            android:spinnerMode="dropdown"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="0dp"
+            android:backgroundTint="@color/main"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textSize="@dimen/xs"
+            android:textColor="@color/white"
+            android:text="UPLOAD" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/uploadProductImage"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:scaleType="fitXY"
+               />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/s"
+            android:layout_marginHorizontal="@dimen/m">
+
+            <EditText
+                android:id="@+id/post_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Enter product name"
+                android:textSize="@dimen/m"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/m"
+                android:paddingVertical="@dimen/s"
+                android:background="@drawable/et_bg"
+                android:elevation="2dp"
+                android:shadowColor="@color/main"
+                android:textColor="@color/text"
+                android:layout_marginHorizontal="@dimen/xxs"
+                android:layout_marginTop="@dimen/xs"
+                android:fontFamily="@font/raleway_medium"/>
+            <EditText
+                android:id="@+id/post_price"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:hint="Price"
+                android:textSize="@dimen/m"
+                android:inputType="number"
+                android:paddingHorizontal="@dimen/m"
+                android:paddingVertical="@dimen/s"
+                android:background="@drawable/et_bg"
+                android:elevation="2dp"
+                android:layout_marginHorizontal="@dimen/xxs"
+                android:shadowColor="@color/main"
+                android:textColor="@color/text"
+                android:layout_marginTop="@dimen/xs"
+                android:fontFamily="@font/raleway_medium"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#ececec"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/bt_photo"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/text"
+            app:srcCompat="@drawable/ic_camera" />
+        <ImageButton
+            android:id="@+id/bt_link"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/text"
+            app:srcCompat="@drawable/ic_link" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>
