@@ -42,7 +42,7 @@ To run this application, you have to set your own environmental variables. For s
 - MONGODB_URL: this is the connection string of your MongoDB Atlas database.
 - JWT_SECRET_KEY: Jsonweb token for signing a token from authentication purpose.
 
-Now you can run, for backend,
+Now you can run, for frontend,
 
 ```bash
 cd frontend
@@ -50,7 +50,7 @@ npm i
 npm start
 ```
 
-For frontend,
+For backend,
 
 ```bash
 cd backend
@@ -62,11 +62,11 @@ in the terminal and the application should work.
 
 ## Contributors
 
-@[Bhargab Nath](https://github.com/Bucephalus-lgtm)
+[Bhargab Nath](https://github.com/Bucephalus-lgtm)
 
-@[Pratik Gupta](https://github.com/inomag)
+[Pratik Gupta](https://github.com/inomag)
 
-@[Tasneem Koushar](https://github.com/tasneemkoushar)
+[Tasneem Koushar](https://github.com/tasneemkoushar)
 
 ## License
 
